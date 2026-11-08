@@ -1,0 +1,38 @@
+#RADIOSS ENGINE
+/RUN/cutting_model/1/
+$run_time
+/DT/BRICK/CST
+$dt_brick_f $dt_brick_min
+# https://help.altair.com/hwsolvers/rad/topics/solvers/rad/dt_noda_keyword3_engine_r.htm
+/DT/NODA
+$dt_noda_f $dt_noda_min
+/DT/NODA/CST
+$dt_noda_f $dt_min $initial_mass_scaling
+# /STOP
+# 0 1e8 0 1 1
+# print frequency
+/PRINT/-10
+/TH/TITLE
+# binary tfile format
+/TFILE/4
+$tfile_dt
+/ANIM/DT
+$anim_dt_t0 $anim_dt
+/ANIM/MASS
+/ANIM/NODA/TEMP
+# /ANIM/NODA/DMAS
+/ANIM/ELEM/EPSP
+/ANIM/BRICK/EPSD
+/ANIM/ELEM/TEMP
+/ANIM/ELEM/VONM
+/ANIM/ELEM/HOURG
+/ANIM/VECT/DISP
+/ANIM/VECT/FOPT
+/ANIM/VECT/PCONT
+/ANIM/VECT/VEL
+# /ANIM/GZIP
+# nodal stress and strain
+/ANIM/GPS/STRESS/TENS
+/ANIM/GPS/STRAIN/TENS
+/ANIM/VECT/CONT
+/ANIM/ELEM/ENER
